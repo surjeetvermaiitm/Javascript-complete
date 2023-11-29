@@ -1,0 +1,62 @@
+<script src="https://d2azbuxfd1uia8.cloudfront.net/customPixel.js"></script>
+<script>
+  let pixel = new myPixel();
+  pixel.config(
+    "t1tV9uTOVHw8i8pOfgG7aHCDrnvPzSjG1Ei51D7n3xM",
+    "Skinny_Mixes_Dev"
+  );
+  setTimeout(() => {
+    if (window.location.host !== document.referrer?.split("/")[2]) {
+      pixel.getEvent(
+        "traffic",
+        false,
+        0,
+        "",
+        window?.Shopify?.checkout?.customer_id
+      );
+      console.log("traffic");
+    }
+  }, 500);
+
+  document.body.addEventListener("click", (e) => {
+    pixel.getEvent("click");
+  });
+  document.body.addEventListener("mousemove", () => {
+    pixel.getEvent("mouse move");
+  });
+
+  let scrollElement = document.getElementsByClassName("scrollEvent");
+  for (let i = 0; i < scrollElement.length; i++) {
+    scrollElement[i].addEventListener("scroll", () => {
+      pixel.getEvent("scroll");
+    });
+  }
+</script>
+
+<!-- {% if first_time_accessed == true and post_purchase_page_accessed == false %} -->
+<!-- <script src={{'https://d2azbuxfd1uia8.cloudfront.net/customPixel.js'}} ></script> -->
+<script>
+  let pixel = new myPixel();
+  pixel.config(
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEyMzQ1Njc4OTAiLCJjbGlpZW50X2lkIjoic3VyamVldCJ9.SXP428Osdyj9Vbp4uwba_7JyfqLzT9hgE4JH8Q98TTE",
+    "Surjeet"
+  );
+  if (!Shopify.wasPostPurchasePageSeen) {
+    var order = window.Shopify;
+    // console.log("shopify purchase", window.Shopify);
+    setTimeout(() => {
+      if (order?.Checkout?.Autocomplete) {
+        pixel.getEvent(
+          "purchase",
+          true,
+          order?.Checkout?.totalPrice,
+          "",
+          window?.Shopify?.checkout?.customer_id
+        );
+      }
+    }, 500);
+  }
+</script>
+<!-- {% endif %} -->
+
+//ShopifyAnalytics.lib.user().traits().uniqToken

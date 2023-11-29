@@ -1,0 +1,411 @@
+{
+  "data": {
+    "fast_frwd_score": {
+      "id": "fast_frwd_score",
+      "label": "FastFRWD Score",
+      "meta_data": [
+        {
+          "id": "ff_last_updated_timestamp",
+          "label": "Last updated",
+          "visible": true,
+          "position": 1
+        },
+        {
+          "id": "ff_score",
+          "label": "",
+          "visible": true,
+          "position": 2
+        }
+      ],
+      "score_ingredients": {
+        "id": "score_ingredients",
+        "label": "Score Ingredients",
+        "score_meta_data": [
+          {
+            "id": "growth",
+            "label": "Growth",
+            "visible": true,
+            "position": 1,
+            "meta_label": "Traffic growth",
+            "content_key": "growth_sentence",
+            "meta_label_in": "% YoY",
+            "meta_label_key": "percentage_traffic_growth_yoy"
+          },
+          {
+            "id": "profitability",
+            "label": "Profitability",
+            "visible": true,
+            "position": 2,
+            "meta_label": "LTV: CAC",
+            "content_key": "profitability_sentence",
+            "meta_label_in": ":",
+            "meta_label_key": "to_be_decided"
+          },
+          {
+            "id": "acquisition",
+            "label": "Acquisition",
+            "visible": true,
+            "position": 3,
+            "meta_label": "P:E:O traffic",
+            "content_key": "acquisition_sentence",
+            "meta_label_in": "%",
+            "meta_label_key": "acquisition_peo_traffic"
+          },
+          {
+            "id": "retention",
+            "label": "Retention",
+            "visible": true,
+            "position": 3,
+            "meta_label": "Repeat purchase rate",
+            "content_key": "retention_sentence",
+            "meta_label_in": "%",
+            "meta_label_key": "to_be_decided"
+          }
+        ]
+      }
+    },
+    "menu_bar": {
+      "id": "menu_bar",
+      "label": "FASTFRWD",
+      "meta_data": [
+        {
+          "id": "weekly_digest",
+          "data": [],
+          "label": "Weekly digest",
+          "visible": true,
+          "position": 1
+        },
+        {
+          "id": "wins_and_worries",
+          "data": [],
+          "label": "Wins and worries",
+          "visible": true,
+          "position": 2
+        },
+        {
+          "id": "fast_frwd_score",
+          "data": [
+            {
+              "id": "growth",
+              "label": "Growth",
+              "visible": true,
+              "position": 1
+            },
+            {
+              "id": "retention",
+              "label": "Retention",
+              "visible": true,
+              "position": 3,
+              "data": [
+                {
+                  "id": "ltv",
+                  "label": "LTV",
+                  "visible": true,
+                  "position": 1
+                },
+                {
+                  "id": "new-customers",
+                  "label": "New Customers",
+                  "visible": true,
+                  "position": 2
+                },
+                {
+                  "id": "product-insights",
+                  "label": "Product insights",
+                  "visible": true,
+                  "position": 3
+                }
+              ]
+            },
+            {
+              "id": "acquisition",
+              "data": [
+                {
+                  "id": "peo_insights",
+                  "label": "P.E.O Insights",
+                  "visible": true,
+                  "position": 3
+                },
+                {
+                  "id": "spend",
+                  "label": "Spend",
+                  "visible": true,
+                  "position": 2
+                },
+                {
+                  "id": "platform",
+                  "data": [
+                    {
+                      "id": "google_ads",
+                      "label": "Google Ads",
+                      "visible": true,
+                      "position": 1
+                    },
+                    {
+                      "id": "meta_ads",
+                      "label": "Meta Ads",
+                      "visible": true,
+                      "position": 2
+                    },
+                    {
+                      "id": "google_organic",
+                      "label": "Organic Google",
+                      "visible": true,
+                      "position": 3
+                    },
+                    {
+                      "id": "meta_organic",
+                      "label": "Organic Meta",
+                      "visible": true,
+                      "position": 4
+                    },
+                    {
+                      "id": "klaviyo",
+                      "label": "Klaviyo",
+                      "visible": true,
+                      "position": 5
+                    },
+                    {
+                      "id": "direct_traffic",
+                      "label": "Direct Traffic",
+                      "visible": true,
+                      "position": 6
+                    }
+                  ],
+                  "label": "Platform",
+                  "visible": true,
+                  "position": 1
+                }
+              ],
+              "label": "Acquisition",
+              "visible": true,
+              "position": 2
+            }
+          ],
+          "label": "Aurora score",
+          "visible": true,
+          "position": 3
+        },
+        {
+          "id": "explainers",
+          "data": [],
+          "label": "Explainers",
+          "visible": true,
+          "position": 4
+        },
+        {
+          "id": "my_profile",
+          "data": [],
+          "label": "My profile",
+          "visible": false,
+          "position": 5
+        },
+        {
+          "id": "settings",
+          "data": [],
+          "label": "Settings",
+          "visible": true,
+          "position": 6
+        },
+        {
+          "id": "admin",
+          "data": [],
+          "label": "Admin Panel",
+          "visible": true,
+          "position": 7
+        }
+      ]
+    },
+    "weekly_digest": {
+      "id": "weekly_digest",
+      "label": "Weekly Digest",
+      "meta_data": [
+        {
+          "id": "time_period",
+          "label": "Last Week",
+          "visible": true,
+          "diff_key": "",
+          "position": 1
+        },
+        {
+          "id": "revenue",
+          "label": "Revenue",
+          "visible": true,
+          "diff_key": "percentage_difference_in_revenue_from_the_next_along_table",
+          "position": 2
+        },
+        {
+          "id": "aov",
+          "label": "AOV",
+          "visible": true,
+          "diff_key": "percentage_difference_in_aov_from_the_next_along_table",
+          "position": 3
+        },
+        {
+          "id": "visits",
+          "label": "Visits",
+          "visible": true,
+          "diff_key": "percentage_difference_in_visits_from_the_next_along_table",
+          "position": 4
+        },
+        {
+          "id": "new_customer",
+          "label": "New Customers",
+          "visible": true,
+          "diff_key": "percentage_difference_in_new_customer_from_the_next_along_table",
+          "position": 5
+        },
+        {
+          "id": "cost",
+          "label": "Working Spend",
+          "visible": true,
+          "diff_key": "percentage_difference_in_cost_from_the_next_along_table",
+          "position": 6
+        },
+        {
+          "id": "cpa",
+          "label": "CPA",
+          "visible": true,
+          "diff_key": "percentage_change_cpa",
+          "position": 7
+        }
+      ],
+      "article_info_section": [
+        {
+          "id": "wins_worries",
+          "label": "Wins & Worries",
+          "visible": true,
+          "diff_key": "",
+          "position": 1
+        },
+        {
+          "id": "lets_build",
+          "label": "Let's build",
+          "visible": true,
+          "diff_key": "",
+          "position": 2
+        },
+        {
+          "id": "lets_learn",
+          "label": "Let's Learn",
+          "visible": true,
+          "diff_key": "",
+          "position": 3
+        }
+      ]
+    },
+    "wins_and_worries": {
+      "id": "wins_and_worries",
+      "label": "Wins & Worries",
+      "meta_data": [
+        {
+          "id": "time_period",
+          "label": "Last Week",
+          "visible": true,
+          "position": 1,
+          "sub_items": []
+        },
+        {
+          "id": "wins",
+          "label": "Wins",
+          "visible": true,
+          "position": 2,
+          "sub_items": [
+            {
+              "content": "",
+              "heading": "",
+              "visible": true,
+              "platform": "",
+              "position": 1,
+              "sub_heading": ""
+            },
+            {
+              "content": "",
+              "heading": "",
+              "visible": true,
+              "platform": "",
+              "position": 1,
+              "sub_heading": ""
+            },
+            {
+              "content": "",
+              "heading": "",
+              "visible": true,
+              "platform": "",
+              "position": 1,
+              "sub_heading": ""
+            }
+          ]
+        },
+        {
+          "id": "worries",
+          "label": "Worries",
+          "visible": true,
+          "position": 3,
+          "sub_items": [
+            {
+              "content": "",
+              "heading": "",
+              "visible": true,
+              "platform": "",
+              "position": 1,
+              "sub_heading": ""
+            },
+            {
+              "content": "",
+              "heading": "",
+              "visible": true,
+              "platform": "",
+              "position": 1,
+              "sub_heading": ""
+            },
+            {
+              "content": "",
+              "heading": "",
+              "visible": true,
+              "platform": "",
+              "position": 1,
+              "sub_heading": ""
+            }
+          ]
+        },
+        {
+          "id": "watching",
+          "label": "Watching",
+          "visible": true,
+          "position": 4,
+          "sub_items": [
+            {
+              "content": "",
+              "heading": "",
+              "visible": true,
+              "platform": "",
+              "position": 1,
+              "sub_heading": ""
+            },
+            {
+              "content": "",
+              "heading": "",
+              "visible": true,
+              "platform": "",
+              "position": 1,
+              "sub_heading": ""
+            },
+            {
+              "content": "",
+              "heading": "",
+              "visible": true,
+              "platform": "",
+              "position": 1,
+              "sub_heading": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "status": {
+    "statusCode": "bain-200",
+    "statusMessage": "Success"
+  }
+}
