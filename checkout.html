@@ -1,0 +1,110 @@
+{% if first_time_accessed %}
+<script src={{'https://d2azbuxfd1uia8.cloudfront.net/customPixel.js'}} ></script>
+<script>
+let pixel=new myPixel();
+pixel.config("t1tV9uTOVHw8i8pOfgG7aHCDrnvPzSjG1Ei51D7n3xM","Skinny_Mixes");
+let email=!!"{{ checkout.email }}"?"{{ checkout.email }}":""
+pixel.getEvent(
+"purchase",
+true,
+{{ checkout.total_price | divided_by: 100.0 }},
+"",
+"",
+email
+);
+</script>
+{% endif %}
+
+<!-- Google Ads Conversion Tracking -->
+<script>
+  var enhanced_conversion_data = {
+    "first_name": "{{ checkout.billing_address.first_name }}",
+    "last_name": "{{ checkout.billing_address.last_name }}",
+    "home_address": {
+      "street": "{{ checkout.billing_address.street }}",
+      "city": "{{ checkout.billing_address.city }}",
+      "region": "{{ checkout.billing_address.province }}",
+      "postal_code": "{{ checkout.billing_address.zip }}",
+      "country": "{{ checkout.billing_address.country_code }}"
+    }
+  }
+if("{{ checkout.email }}"){
+   enhanced_conversion_data.email = "{{ checkout.email }}";
+}
+if("{{ checkout.billing_address.phone }}"){
+   enhanced_conversion_data.phone_number = "{{ checkout.billing_address.phone }}";
+}
+</script>
+<!-- Global site tag (gtag.js) - Google Ads: 854914866 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-854914866"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'AW-854914866', {'allow_enhanced_conversions': true});
+</script>
+{% if first_time_accessed %}
+<script>
+  gtag('event', 'conversion', {
+    'send_to': 'AW-854914866/JldXCMCX848YELLu05cD',
+    'value': {{ checkout.total_price | divided_by: 100.0 }},
+       'currency': '{{ currency }}',
+       'transaction_id': '{{ order_number }}',
+       });
+</script>
+{% endif %}
+<!-- End Google Ads Conversion Tracking -->
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KVSF83S');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVSF83S"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<script type="text/javascript" src="https://widget.wickedreports.com/v2/3759/wr-d594ee2cd142d4e85891b38470d94764.js" async></script>
+<script src="https://cdn.attn.tv/skinnymixes/dtag.js"></script>
+<div data-rebuy-id="8830"></div>
+<div data-rebuy-id="9732"></div>
+
+{% if first_time_accessed %}
+
+{% endif %}
+
+{% comment %}
+<!-- BEGIN Google Customer Reviews -->
+<script src="https://apis.google.com/js/platform.js?onload=renderOptIn" async defer></script>
+<script>
+  window.renderOptIn = function() {
+    window.gapi.load('surveyoptin', function() {
+      window.gapi.surveyoptin.render(
+        {
+          "merchant_id": 115965859,
+          "order_id": "{{ order.name }}",
+          "email": "{{ order.email }}",
+          "delivery_country": "{{ shipping_address.country_code }}",
+          "estimated_delivery_date": "{{ order.created_at | date: '%Y-%m-%d' }}"
+        });
+    });
+  }
+</script>
+<!-- END Google Customer Reviews -->
+{% endcomment %}
+
+{% if first_time_accessed %}
+<!-- BING -->
+<script>(function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"25037850"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","//bat.bing.com/bat.js","uetq");</script>
+<script>
+window.uetq = window.uetq || []; 
+window.uetq.push({ 'gv': {{ subtotal_price | money_without_currency }}, 'gc': '{{ shop.currency }}' }); 
+</script>
+{% endif %}
+
+<img src="https://listen.audiohook.com/533002d9-f4b7-42c9-a9ff-a980ce47fd91/pixel.png?order={{ order_number }}&value={{ total_price | money_without_currency }}" style="display: none;">

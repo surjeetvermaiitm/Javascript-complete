@@ -3,7 +3,7 @@
   let pixel = new myPixel();
   pixel.config(
     "t1tV9uTOVHw8i8pOfgG7aHCDrnvPzSjG1Ei51D7n3xM",
-    "Skinny_Mixes_Dev"
+    "Skinny_Mixes"
   );
   setTimeout(() => {
     if (window.location.host !== document.referrer?.split("/")[2]) {
@@ -60,3 +60,24 @@
 <!-- {% endif %} -->
 
 //ShopifyAnalytics.lib.user().traits().uniqToken
+{% if first_time_accessed == true and post_purchase_page_accessed == false %}
+<script src={{'https://d2azbuxfd1uia8.cloudfront.net/customPixel.js'}} ></script>
+<script>
+let pixel=new myPixel();
+pixel.config("t1tV9uTOVHw8i8pOfgG7aHCDrnvPzSjG1Ei51D7n3xM","Skinny_Mixes");
+if (!Shopify.wasPostPurchasePageSeen) {
+    var order = window.Shopify;
+    setTimeout(() => {
+if(order?.Checkout?.Autocomplete){
+      pixel.getEvent(
+        "purchase",
+        true,
+        order?.Checkout?.totalPrice,
+       "",
+        window?.Shopify?.checkout?.customer_id
+      );
+   } }, 500);
+
+  }
+</script>
+{% endif %}
